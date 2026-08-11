@@ -1,0 +1,9 @@
+baseURL = 'https://example.org/'
+locale = 'en-us'
+title = 'The Bullet Journal Guide'
+theme = 'PaperMod'
+
+[params]
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
