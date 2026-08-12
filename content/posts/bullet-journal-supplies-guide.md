@@ -2,6 +2,13 @@
 title: "The Only Bullet Journal Supplies You Need to Start (Beginner's Guide)"
 date: 2026-08-11
 draft: false
+description: "Learn the only bullet journal supplies you need as a beginner: notebook, fineliner pen, ruler, washi tape and more. Start simple and stay organized."
+images:
+  - "images/bullet-journal-supplies-cover.png"
+cover:
+  image: "images/bullet-journal-supplies-cover.png"
+  alt: "Bullet journal supplies for beginners: notebook, fineliner pen, ruler, washi tape"
+  caption: "The only supplies you really need to start a bullet journal"
 ---
 
 ## Introduction
