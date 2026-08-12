@@ -2,8 +2,45 @@ baseURL = 'https://bujo-blog.netlify.app/'
 locale = 'en-us'
 title = 'The Bullet Journal Guide'
 theme = 'PaperMod'
+enableRobotsTXT = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
   ShowReadingTime = true
   ShowShareButtons = false
   ShowPostNavLinks = true
+  ShowToc = true
+  Toc = true
+  TocOpen = false
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowBreadcrumbs = true
+  ShowTags = true
+  ShowAllPagesInHome = false
+  ShowFullTextinRSS = true
+  author = "The Bullet Journal Guide"
+
+  [params.homeInfoParams]
+    Title = "Simpler pages, calmer days."
+    Content = "A cozy corner of the internet about the bullet journal method: minimal supplies, flexible layouts and gentle planning that actually sticks. Start beginner-friendly and grow your system at your own pace."
+
+  [[params.socialIcons]]
+    name = "pinterest"
+    title = "Pinterest"
+    url = "https://www.pinterest.com/"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 20

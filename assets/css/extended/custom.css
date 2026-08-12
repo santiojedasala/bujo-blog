@@ -1,0 +1,355 @@
+/* ============================================================
+   The Bullet Journal Guide — custom theme
+   Warm paper & ink palette, cozy serif headings
+   ============================================================ */
+
+:root {
+    --gap: 28px;
+    --content-gap: 20px;
+    --nav-width: 1100px;
+    --main-width: 740px;
+    --header-height: 64px;
+    --footer-height: 64px;
+    --radius: 14px;
+
+    /* Warm paper (light) palette */
+    --theme: #fbf7f0;
+    --entry: #ffffff;
+    --primary: #37342e;
+    --secondary: #8a7f6d;
+    --tertiary: #e3d9c8;
+    --content: #26231e;
+    --code-block-bg: #2e2a24;
+    --code-bg: #f3ecdf;
+    --border: #e9e0d0;
+    --accent: #b4614c;
+    --accent-soft: #f6e3dc;
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    --theme: #1e1c18;
+    --entry: #262320;
+    --primary: #ece6da;
+    --secondary: #a89d89;
+    --tertiary: #55503f;
+    --content: #e7e0d4;
+    --code-block-bg: #16140f;
+    --code-bg: #2b2721;
+    --border: #3c362e;
+    --accent: #d98c74;
+    --accent-soft: #482e27;
+    color-scheme: dark;
+}
+
+/* ---------- Typography ---------- */
+
+body {
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    line-height: 1.75;
+}
+
+h1, h2, h3, h4, h5, h6,
+.entry-title, .logo, .post-title {
+    font-family: "Fraunces", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.site-title-link, .logo {
+    font-size: 1.15rem;
+}
+
+/* ---------- Header ---------- */
+
+.header {
+    backdrop-filter: blur(8px);
+    background: rgba(251, 247, 240, 0.85);
+}
+
+[data-theme="dark"] .header {
+    background: rgba(30, 28, 24, 0.85);
+}
+
+.nav {
+    padding-right: 28px;
+    padding-left: 28px;
+}
+
+.logo a,
+.nav a {
+    transition: color 0.2s ease;
+}
+
+.nav a:hover {
+    color: var(--accent);
+}
+
+/* ---------- Home intro card ---------- */
+
+.first-entry {
+    position: relative;
+    min-height: auto;
+    padding: 48px 44px;
+    margin-top: 20px;
+    border-radius: 18px;
+    overflow: hidden;
+    background:
+        radial-gradient(120% 120% at 100% 0%, rgba(180, 97, 76, 0.12), transparent 55%),
+        radial-gradient(120% 120% at 0% 100%, rgba(227, 217, 200, 0.55), transparent 55%),
+        var(--entry);
+    border: 1px solid var(--border);
+}
+
+[data-theme="dark"] .first-entry {
+    background:
+        radial-gradient(120% 120% at 100% 0%, rgba(217, 140, 116, 0.14), transparent 55%),
+        radial-gradient(120% 120% at 0% 100%, rgba(85, 80, 63, 0.35), transparent 55%),
+        var(--entry);
+}
+
+.first-entry .entry-header h2 {
+    font-size: 2.1rem;
+    line-height: 1.2;
+    color: var(--primary);
+    margin-bottom: 14px;
+}
+
+.first-entry .entry-content p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.06rem;
+    color: var(--secondary);
+    max-width: 62ch;
+}
+
+/* ---------- Post entry cards (list) ---------- */
+
+.post-entry {
+    position: relative;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--entry);
+    padding: 24px 26px;
+    box-shadow: 0 2px 10px rgba(70, 60, 45, 0.05);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.post-entry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(70, 60, 45, 0.12);
+}
+
+.post-entry .entry-header h2 {
+    font-size: 1.35rem;
+    color: var(--primary);
+}
+
+.post-entry .entry-footer {
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+/* ---------- Article heading accents ---------- */
+
+.post-single h2 {
+    position: relative;
+    padding-top: 12px;
+    padding-bottom: 8px;
+}
+
+.post-single h2::before {
+    content: "";
+    display: block;
+    width: 46px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--accent);
+    margin-bottom: 12px;
+}
+
+/* ---------- Tables ---------- */
+
+.post-single table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 0.95rem;
+}
+
+.post-single th {
+    background: var(--accent-soft);
+    color: var(--primary);
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+}
+
+.post-single td {
+    border-top: 1px solid var(--border);
+}
+
+.post-single tbody tr:nth-child(even) {
+    background: rgba(227, 217, 200, 0.25);
+}
+
+/* ---------- Blockquote callout ---------- */
+
+.post-single blockquote,
+.tldr {
+    background: var(--accent-soft);
+    border-left: 5px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 20px;
+    margin: 22px 0;
+    color: var(--primary);
+}
+
+.post-single blockquote p,
+.tldr p,
+.tldr li {
+    color: var(--primary);
+}
+
+/* ---------- Tag chips ---------- */
+
+.post-tags a {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 999px;
+    padding: 2px 12px;
+    font-size: 0.8rem;
+    letter-spacing: 0.4px;
+    text-decoration: none;
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.post-tags a:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+/* ---------- TOC ---------- */
+
+.post-single #TableOfContents a {
+    color: var(--secondary);
+    border-radius: 6px;
+    transition: color 0.15s ease, background 0.15s ease;
+}
+
+.post-single #TableOfContents a:hover {
+    color: var(--accent);
+    background: var(--accent-soft);
+}
+
+/* ---------- Custom boxes in the article ---------- */
+
+.essentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 14px;
+    margin: 24px 0 28px;
+}
+
+.ess-item {
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent);
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 2px 8px rgba(70, 60, 45, 0.05);
+}
+
+.ess-item .ess-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.ess-item h4 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    color: var(--primary);
+}
+
+.ess-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--secondary);
+}
+
+.callout {
+    background: var(--accent-soft);
+    border: 1px dashed var(--accent);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 20px 0;
+}
+
+.callout strong {
+    color: var(--accent);
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+    border-top: 1px solid var(--border);
+}
+
+/* ---------- Buttons (share / theme) ---------- */
+
+.share-buttons a,
+.post-single .share-buttons a {
+    border-radius: 999px;
+    padding: 4px 14px;
+}
+
+#theme-toggle {
+    border-radius: 999px;
+}
+
+/* ---------- Selection & scroll niceties ---------- */
+
+::selection {
+    background: var(--accent-soft);
+    color: var(--primary);
+}
+
+/* nicer scrollbar (Webkit) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--tertiary);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* ---------- Mobile tweaks ---------- */
+
+@media (max-width: 700px) {
+    .first-entry {
+        padding: 32px 24px;
+    }
+    .first-entry .entry-header h2 {
+        font-size: 1.6rem;
+    }
+    .essentials-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
