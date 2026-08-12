@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://bujo-blog.netlify.app/'
 locale = 'en-us'
 title = 'The Bullet Journal Guide'
 theme = 'PaperMod'
