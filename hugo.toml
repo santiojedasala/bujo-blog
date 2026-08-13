@@ -31,7 +31,7 @@ enableRobotsTXT = true
   [[params.socialIcons]]
     name = "pinterest"
     title = "Pinterest"
-    url = "https://www.pinterest.com/"
+    url = "https://es.pinterest.com/santiojedasala/"
 
 [menu]
   [[menu.main]]
