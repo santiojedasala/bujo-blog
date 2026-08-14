@@ -1,7 +1,7 @@
 ---
 title: "Bullet Journal Spreads for Beginners: The 5 Easiest Layouts to Try First"
 date: 2026-08-14
-draft: true
+draft: false
 description: "New to bullet journaling? Start with these 5 easy spreads: the key page, monthly log, habit tracker, daily log, and a simple future log. Step-by-step layout ideas for beginners."
 images:
   - "images/bullet-journal-supplies-cover.png"
